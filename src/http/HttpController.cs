@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Text.Json;
 
 namespace Pokedex.http;
@@ -25,18 +26,10 @@ public class HttpHandler {
     
     // returns response from the uri
     public async Task<string> RetResponse(Uri uri) {
-        string content = "";
-        try {
-            content = await HttpClient.GetStringAsync(uri);
-            HttpClient.Dispose();
-        }
-        catch (Exception e) {
-            Console.WriteLine(e.Message);
-        }
-        finally {
-            Console.WriteLine("Connection closed.");
-        }
-
+        HttpClient.DefaultRequestHeaders.Accept.Clear();
+        HttpClient.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
+        string content = await HttpClient.GetStringAsync(uri);
         return DeserializeBasic(content);
     }
 }
