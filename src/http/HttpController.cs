@@ -16,21 +16,23 @@ public class HttpHandler {
     }
     
     
-    // serializes JSON
-    private string DeserializeBasic(string jsonString) {
-        string deserialized = JsonSerializer.Deserialize<string>(jsonString);
-        if (deserialized != null) return deserialized;
-        return ("Empty entry");
-    }
-    
-    
     // returns response from the uri
-    public async Task<string> RetResponse(Uri uri) {
+    public async Task<string> RetStringResponse(Uri uri) {
         HttpClient.DefaultRequestHeaders.Accept.Clear();
         HttpClient.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
         string content = await HttpClient.GetStringAsync(uri);
-        return DeserializeBasic(content);
+        return content;
+    }
+
+    
+    // retyrbs response as stream
+    public async Task<Stream> RetStreamResponse(Uri uri) {
+        HttpClient.DefaultRequestHeaders.Accept.Clear();
+        HttpClient.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
+        Stream content = await HttpClient.GetStreamAsync(uri);
+        return content;
     }
 }
 
