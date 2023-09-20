@@ -1,6 +1,6 @@
 namespace Pokedex;
 
-public struct Stats
+public class Stats
 {
     // public readonly ushort id { get; }
     public ushort base_stat { get; set; }

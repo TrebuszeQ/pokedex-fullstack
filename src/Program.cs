@@ -9,11 +9,14 @@ string pokemonInput = Console.ReadLine().Trim().ToLower();
 Uri uri = new Uri($"https://pokeapi.co/api/v2/pokemon/{pokemonInput}");
 
 HttpHandler httpHandler = new HttpHandler();
-string response = await httpHandler.RetStringResponse(uri);
+// string response = await httpHandler.RetStringResponse(uri);
 
 // Console.WriteLine(response);
 
-Pokemon? pokemon = JsonSerializer.Deserialize<Pokemon>(response);
+// var pokemon = JsonSerializer.Deserialize<Pokemon>(response);
+// var pokemon = await httpHandler.RetPokemonDeserialized(uri);
+var pokemonJson = await httpHandler.RetPokemonSerialized(uri);
+Console.WriteLine(pokemonJson);
 
-Console.WriteLine($"Abillities: {pokemon?.Abilities}");
+
 

@@ -1,6 +1,6 @@
 namespace Pokedex;
 
-public struct Ability
+public class Ability
 {
     public string name { get; set; }
     public Uri url { get; set; }

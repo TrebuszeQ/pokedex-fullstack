@@ -1,6 +1,6 @@
 namespace Pokedex;
 
-public struct Species
+public class Species
 {
     // public readonly ushort id { get; }
     public ushort base_hapiness { get; set; }

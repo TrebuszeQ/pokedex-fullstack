@@ -1,14 +1,17 @@
+using System.Text.Json.Serialization;
+
 namespace Pokedex;
 
 public class Pokemon
 {
-    public (List<Ability, Boolean, ushort>) Abilities { get; set; }
+    [JsonPropertyName("Abilities")]
+    public Abilities Abilities { get; set; }
     public ushort base_experience { get; set; }
     public List<string>? game_indice { get; }
     public ushort height { get; }
     public List<string>? held_items { get; }
     public int id { get; set; }
-    public Boolean is_default { get; }
+    public bool is_default { get; }
     public Uri? encounters { get; }
     public List<string> moves { get; }
     public string name { get; }
