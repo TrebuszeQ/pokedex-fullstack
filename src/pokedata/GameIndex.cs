@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Pokedex;
 
-public class Ability
+public class GameIndex
 {
     [JsonPropertyName("name")]
     public string Name { get; set; }

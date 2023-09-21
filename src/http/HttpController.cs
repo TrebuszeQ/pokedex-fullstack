@@ -1,6 +1,6 @@
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Pokedex.http;
 
@@ -14,6 +14,15 @@ public class HttpHandler {
         };
         HttpClient = new HttpClient(socketsHandler);
         HttpClient.Timeout = TimeSpan.FromMinutes(2);
+        HttpClient.DefaultRequestHeaders.Accept.Clear();
+        HttpClient.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            IncludeFields = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        };
     }
     
     
@@ -36,25 +45,28 @@ public class HttpHandler {
         return content;
     }
 
-    public async Task<Pokemon?> RetPokemonDeserialized(Uri uri) {
-        HttpClient.DefaultRequestHeaders.Accept.Clear();
-        HttpClient.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/json"));
+    
+    // returns deserialized json
+    public async Task<Pokemon?> RetPokemonDeserialized(Uri uri)
+    {
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            IncludeFields = true,
+
+        };
+        
         var response = await HttpClient.GetAsync(uri);
         var json = await response.Content.ReadAsStringAsync();
+        // Console.WriteLine(json);
         var content = JsonSerializer.Deserialize<Pokemon>(json);
         return content;
     }
 
-    public async Task<string?> RetPokemonSerialized(Uri uri)
+    public async Task<Pokemon?> RetPokemonDeserialized2(Uri uri)
     {
-        var options = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            WriteIndented = true
-        };
-        var jsonString = JsonSerializer.Serialize(await RetStringResponse(uri), options);
-        return jsonString;
+        Pokemon? response = await HttpClient.GetFromJsonAsync<Pokemon>(uri);
+        return response;
     }
 }
 

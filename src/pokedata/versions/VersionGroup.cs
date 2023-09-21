@@ -2,8 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Pokedex;
 
-public class Ability
-{
+public class VersionGroup {
     [JsonPropertyName("name")]
     public string Name { get; set; }
     [JsonPropertyName("url")]

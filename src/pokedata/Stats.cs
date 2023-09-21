@@ -1,12 +1,18 @@
+using System.Text.Json.Serialization;
+
 namespace Pokedex;
 
 public class Stats
 {
     // public readonly ushort id { get; }
-    public ushort base_stat { get; set; }
-    public ushort effort { get; set; }
-    public List<Stat> stat { get; set; }
-    public List<Types> types { get; set; }
+    [JsonPropertyName("base_stat")]
+    public ushort BaseStat { get; set; }
+    [JsonPropertyName("effort")]
+    public ushort Effort { get; set; }
+    [JsonPropertyName("stat")]
+    public List<Stat> Stat { get; set; }
+    [JsonPropertyName("types")]
+    public List<Types> Types { get; set; }
 
     // public Stats(ushort id)
     // {

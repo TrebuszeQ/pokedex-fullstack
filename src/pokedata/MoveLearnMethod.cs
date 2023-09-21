@@ -2,10 +2,10 @@ using System.Text.Json.Serialization;
 
 namespace Pokedex;
 
-public class Ability
+public class MoveLearnMethod
 {
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string name { get; set; }
     [JsonPropertyName("url")]
     public string Url { get; set; }
 }

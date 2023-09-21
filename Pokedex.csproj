@@ -9,6 +9,7 @@
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	<LangVersion>preview</LangVersion>
+
 	</PropertyGroup>
 
 

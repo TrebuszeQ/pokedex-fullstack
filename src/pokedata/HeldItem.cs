@@ -2,9 +2,9 @@ using System.Text.Json.Serialization;
 
 namespace Pokedex;
 
-public class Ability
+public class HeldItem
 {
-    [JsonPropertyName("name")]
+    [JsonPropertyName("name")] 
     public string Name { get; set; }
     [JsonPropertyName("url")]
     public string Url { get; set; }
