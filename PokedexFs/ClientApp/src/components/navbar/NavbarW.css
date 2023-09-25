@@ -1,0 +1,25 @@
+#navW {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 100%;
+    width: 100%;
+    height: 20%;
+}
+
+.navButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: 0.15s;
+    color: white;
+    background-color: mediumslateblue;
+    width: 100%;
+    height: 100%;
+}
+
+.navButton:hover {
+    color: mediumslateblue;
+    background-color: white;
+}
