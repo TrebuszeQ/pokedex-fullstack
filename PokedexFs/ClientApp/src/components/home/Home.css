@@ -1,5 +1,36 @@
-#HomeW {
+#homeW {
     display: grid;
-    grid-template-columns: 80% 20%;
-    
+    grid-template-columns: 50% 30% 20%;
+    grid-template-rows: 10% 90%;
+    width: 100%;
+    height: 100vh;
+}
+#homeB {
+    grid-column: 1/6;
+    grid-row: 1;
+}
+
+#dataW, #imageW, #pokeMenuW  {
+    grid-row: 2/4;
+}
+
+#dataW {
+    display: grid;
+    grid-template-columns: repeat(3, 33.333%);
+    grid-template-rows: 100%;
+}
+
+#imageW {
+    background-color: grey;
+}
+
+#pokeMenuW {
+}
+
+.homeB {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    height: 7.5vh;
 }

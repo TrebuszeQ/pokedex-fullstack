@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // css
 import "./NavbarW.css";
 import "../Globals.css";
-import {Nav} from "reactstrap";
 export class Navbar extends Component {
     static displayName = Navbar.name;
     
@@ -18,7 +17,7 @@ export class Navbar extends Component {
     }
 
     static populateNavButtons() {
-        const buttonClass = "navButton l9 relativeItem";
+        const buttonClass = "navButton l9 relativeItem purpleTheme";
         let navButtons2 = [];
         for (let i = 0; i < 5; i++) {
             let buttonId = `button${i}`;
