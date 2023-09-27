@@ -1,4 +1,4 @@
-export interface Form {
+export interface VersionGroup {
     name: string
     url: string
 }

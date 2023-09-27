@@ -1,4 +1,4 @@
-export interface Form {
+export interface Item {
     name: string
     url: string
 }

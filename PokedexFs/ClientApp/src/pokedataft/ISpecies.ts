@@ -1,4 +1,4 @@
-export interface Form {
+export interface Species {
     name: string
     url: string
 }
