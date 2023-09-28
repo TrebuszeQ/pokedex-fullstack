@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // components
-import { Navbar } from "./navbar/Navbar";
-import {Home2} from "./home/Home2";
+import { Navbar} from "../navbar/Navbar";
+import { Home2} from "../home/Home2";
 // css
-import "./Globals.css";
+import "../Globals.css"
 import "./Layout.css";
 
 

@@ -3,12 +3,11 @@ import React, { Component } from "react";
 import "./Home.css";
 import "../Globals.css";
 // classes
-import { PokeList } from "../../pokedataft/PokeList";
 
 export class Home2 extends Component {
     static displayName = Home2.name;
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
     }
     
     render() {

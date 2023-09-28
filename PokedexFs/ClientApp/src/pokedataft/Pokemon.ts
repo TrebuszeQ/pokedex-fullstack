@@ -27,7 +27,4 @@ export class Pokemon {
     static Sprites: Sprites;
     static Stats: List<Stat>;
     static Weight: number;
-    constructor(props) {
-
-    }
 }
