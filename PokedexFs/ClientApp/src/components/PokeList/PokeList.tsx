@@ -1,17 +1,19 @@
-import React, {Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import { List } from "../../data/list";
 import { Pokemon } from "../../pokedataft/Pokemon";
-type Status = "idle" | "loading" | "success" | "error";
+type Status =
+    { status: "idle" } |
+    { status: "loading" } |
+    { status: "success", data: List<Pokemon> } |
+    { status: "error", error: Error};
 
 export class PokeList extends Component {
-    static displayName = PokeList.name;
+    static : string = PokeList.name;
     
     private _listCache: null | List<Pokemon>;
     constructor(props) {
         super(props);
-        
-        const [enabled, disabled] = useState<Status>("idle");
-        // this.state = { pokeList: [], loading: true };
+        const [requestState, setRequestState] = useState<Status>("idle");
     }
     
     async componentDidMount(): Promise<void> {
@@ -24,11 +26,11 @@ export class PokeList extends Component {
         }
         else 
         {
-            const response = await fetch('pokelist');
+            const response: Response = await fetch('pokelist');
             const data = await response.json();
             this._listCache = data;
-            // this.setState({ pokeList: data, loading: false });
-            
+
+            const [requestState, setRequestState] = useState<Status>({ status: "success", data: data });
         }
         console.log(this._listCache);
     }

@@ -14,7 +14,9 @@ export class Layout extends Component {
         return (
             <div id="pageW" className="l10 absoluteItem">
                 <Navbar></Navbar>
-                <Home2></Home2>
+                <Home2>
+                    {this.props.children}
+                </Home2>
             </div>
             
         );

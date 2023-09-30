@@ -3,7 +3,7 @@ import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import {Home2} from "./components/home/Home2";
 import { Layout } from "./components/layout/Layout";
-import { PokeList} from "./components/PokeList/PokeList";
+import { PokeList } from "./components/PokeList/PokeList";
 
 const AppRoutes = [
   {
