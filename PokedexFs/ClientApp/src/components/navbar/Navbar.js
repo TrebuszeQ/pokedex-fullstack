@@ -17,11 +17,14 @@ export class Navbar extends Component {
     }
 
     static populateNavButtons() {
-        const buttonClass = "navButton l9 relativeItem purpleTheme";
+        const buttonClass = "Button l9 relativeItem purpleTheme";
         let navButtons2 = [];
         for (let i = 0; i < 5; i++) {
             let buttonId = `button${i}`;
-            navButtons2[i] = <button key={buttonId} type="button" id={buttonId} className={buttonClass}>{buttonId.toUpperCase()}</button>;
+            navButtons2[i] = 
+                <button key={buttonId} type="button" id={buttonId} className={buttonClass}>
+                    {buttonId.toUpperCase()}
+                </button>;
         }
         Navbar.navButtons = Object.freeze(navButtons2);
     }

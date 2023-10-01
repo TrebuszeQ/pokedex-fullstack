@@ -14,6 +14,16 @@
     z-index: 7;
 }
 
+.noPadd
+{
+    padding: 0;
+}
+
+.noMarg
+{
+    margin: 0;
+}
+
 .absoluteItem {
     position: absolute;
     box-sizing: border-box;
@@ -37,4 +47,20 @@
 
 .borderBox {
     box-sizing: border-box;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: 0.15s;
+    width: 100%;
+    height: 100%;
+}
+
+.Button:hover {
+    color: mediumslateblue;
+    background-color: white;
 }

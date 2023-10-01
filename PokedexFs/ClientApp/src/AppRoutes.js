@@ -7,7 +7,11 @@ import { PokeList } from "./components/PokeList/PokeList";
 
 const AppRoutes = [
   {
-    index: true,
+    path: '/',
+    element: <Layout/>
+  },
+  {
+    path: "/home",
     element: <Home2 />
   },
   {
@@ -17,10 +21,6 @@ const AppRoutes = [
   {
     path: '/fetch-data',
     element: <FetchData />
-  },
-  {
-    path: '/home2',
-    element: <Layout/>
   },
   {
     path: "/fetch-data2",

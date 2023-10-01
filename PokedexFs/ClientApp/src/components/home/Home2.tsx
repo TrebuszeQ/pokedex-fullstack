@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import "./Home.css";
 import "../Globals.css";
 // classes
+// components
+import {PokeList} from "../PokeList/PokeList";
 
 export class Home2 extends Component {
     static displayName = Home2.name;
@@ -24,6 +26,7 @@ export class Home2 extends Component {
                 </div>
 
                 <nav id="pokeMenuW" className="relativeItem purpleTheme l8 borderBox">
+                    <PokeList />
                 </nav>
             </div>
         );

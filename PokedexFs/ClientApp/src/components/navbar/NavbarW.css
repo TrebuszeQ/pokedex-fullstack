@@ -5,19 +5,3 @@
     width: 100%;
     height: 10vh;
 }
-
-.navButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-    transition: 0.15s;
-    width: 100%;
-    height: 100%;
-}
-
-.navButton:hover {
-    color: mediumslateblue;
-    background-color: white;
-}

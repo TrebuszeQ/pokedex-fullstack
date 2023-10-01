@@ -35,6 +35,14 @@ export class PokeList extends Component {
         console.log(this._listCache);
     }
     
+    PresentList()
+    {
+        if(this.state != "ready")
+        {
+        }
+    }
+    
+    
     render() {
         return (
             <div> <h1>lol</h1> </div>
