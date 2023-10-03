@@ -1,18 +1,20 @@
-import {Component, useState} from "react";
+import {Component} from "react";
     
 export class PokeList extends Component {
     static displayName = PokeList.name;
     _pokeList = null;
     _pokeListRender = null;
     _listCache = null;
+    state = {pokeList: null, status: "idle"}
     Status = 
         { status: "idle" } |
         { status: "loading" } |
         { status: "success" } |
         { status: "error" };
+    
     constructor(props) {
         super(props);
-        this.state = { pokeList: null, status: this.Status[0] };
+        this.setState({ pokeList: null, status: this.Status[0] });
     }
 
     
@@ -36,7 +38,7 @@ export class PokeList extends Component {
             }
             catch (e)
             {
-                this.state = { pokeList: null, status: this.Status[3]};
+                this.setState({ pokeList: null, status: this.Status[3]});
                 throw e(`During fetching of Pokemon list error occured: ${e}.`);
             }
         }
@@ -46,7 +48,7 @@ export class PokeList extends Component {
     
     
     // populates _pokeListRender
-    populatePokeListRender()
+    PopulatePokeListRender()
     {
         if(this._pokeList != null && this._pokeListRender == null)
         {
@@ -81,13 +83,5 @@ export class PokeList extends Component {
                 </li>;
             }
         }
-    }
-    
-    render() {
-        return (
-            <ol id="pokeList" className="relativeItem borderBox l9">
-                {this.PresentList()}
-            </ol>
-        )
     }
 }

@@ -5,13 +5,22 @@
     width: 100%;
     height: 100vh;
 }
+
 #homeB {
     grid-column: 1/6;
     grid-row: 1;
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
 }
 
-#dataW, #imageW, #pokeMenuW  {
+#dataW, #imageW, #pokeListW  {
     grid-row: 2/4;
+    padding: 4%;
 }
 
 #dataW {
@@ -22,15 +31,4 @@
 
 #imageW {
     background-color: grey;
-}
-
-#pokeMenuW {
-}
-
-.homeB {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    width: 100%;
-    height: 7.5vh;
 }

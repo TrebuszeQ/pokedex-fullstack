@@ -37,15 +37,13 @@ export class PokeList extends Component {
     
     PresentList()
     {
-        if(this.state != "ready")
-        {
-        }
+        PokeList.
     }
     
     
     render() {
         return (
-            <div> <h1>lol</h1> </div>
+            <div> <h3>lol</h3> </div>
         )
     }
 }
